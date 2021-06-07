@@ -89,14 +89,14 @@ li a:hover {
 <head>
 	<title>Transfer Details</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 <ul>
-  <li><a class="active" href="index final.html">Home</a></li>
-  <li><a  href="viewusers.php">View customers</a></li>
-  <li><a href="transfer.php">Transfer Money</a></li>
-	<li><a href="transferdetails.php">Transfer Details</a></li>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a  href="viewusers1.php">View customers</a></li>
+  <li><a href="transfe2r.php">Transfer Money</a></li>
+	<li><a href="transferdetails1.php">Transfer Details</a></li>
   
   
 </ul>
@@ -109,10 +109,7 @@ li a:hover {
 		<th>Credit</th>
 	</tr>
 	<?php
-	$conn = mysqli_connect("localhost", "root", "", "banking");
-	if($conn-> connect_error){
-		die("connection failed:". $conn-> connect_error);
-	}
+	include 'connection.php';
 
 	$sql = "SELECT * FROM transfer_history";
 	$result = $conn-> query($sql);
