@@ -30,11 +30,12 @@ li a {
 }
 
 li a:hover {
-  background-color: #03443f;
+  background-color: ;
 }
 
 .active {
   background-color: #0c887e;
+
 }
 .viewusers{
   background-color:#0c887e ;
@@ -84,45 +85,39 @@ li a:hover {
     
       *{
         font-size: 10px;
-</style>
+</style>	
 <head>
-	<title>View customers</title>
+	<title>Transfer Details</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
 <ul>
-  <li><a class="active" href="index final.html">Home</a></li>
-  <li><a  href="viewusers.php">View customers</a></li>
-  <li><a href="transfer.php">Transfer Money</a></li>
-  <li><a href="transferdetails.php">Transfer Details</a></li>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a  href="viewusers1.php">View customers</a></li>
+  <li><a href="transfe2r.php">Transfer Money</a></li>
+	<li><a href="transferdetails1.php">Transfer Details</a></li>
+  
   
 </ul>
-
-  </div>
-</div>
 </div>  
 <table class="viewusers">
-	<h1><center>Details of Customers</center></h1>
+	<h1><center>Transfer Details</center></h1>
 	<tr>
-		<th>Name</th>
-		<th>Email</th>
+		<th>Sender</th>
+		<th>Reciever</th>
 		<th>Credit</th>
-		
 	</tr>
 	<?php
-	$conn = mysqli_connect("localhost", "root", "", "banking");
-	if($conn-> connect_error){
-		die("connection failed:". $conn-> connect_error);
-	}
+	include 'connection.php';
 
-	$sql = "SELECT name, email, credit FROM students";
+	$sql = "SELECT * FROM transfer_history";
 	$result = $conn-> query($sql);
 
 	if($result-> num_rows > 0){
 
 		while ( $row = $result -> fetch_assoc()) {
-			echo "<tr><td>". $row["name"] ."</td><td>".  $row["email"] ."</td><td>" .  $row["credit"] ."</td></tr>";
+			echo "<tr><td>". $row["from_user"] ."</td><td>".  $row["to_user"] ."</td><td>" .  $row["Credit"] ."</td></tr>";
 		}
 		echo "</table>";
 
@@ -133,6 +128,6 @@ li a:hover {
     $conn-> close();
 	?>
 </table>
-
+	
 </body>
 </html>
