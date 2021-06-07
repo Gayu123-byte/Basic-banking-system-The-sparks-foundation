@@ -65,16 +65,7 @@ li a:hover {
     }
 </style>
 
-<?php
-$conn = mysqli_connect("localhost", "root", "", "banking");
-if($conn-> connect_error){
-	die("connection failed:". $conn-> connect_error);
-}
-$sql = "SELECT name, email, credit FROM students";
-error_reporting(0);
-$result = mysqli_query($conn,"SELECT *  FROM students");
-$resul1 = mysqli_query($conn,"SELECT *  FROM students");
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -82,10 +73,10 @@ $resul1 = mysqli_query($conn,"SELECT *  FROM students");
 	<title>Transfer Money</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<ul>
-  <li><a class="active" href="index final.html">Home</a></li>
-  <li><a  href="viewusers.php">View customers</a></li>
-  <li><a href="transfer.php">Transfer Money</a></li>
-	<li><a href="transferdetails.php">Transfer Details</a></li>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a  href="viewusers1.php">View customers</a></li>
+  <li><a href="transfer2.php">Transfer Money</a></li>
+	<li><a href="transferdetails1.php">Transfer Details</a></li>
   
   
 </ul>
@@ -179,3 +170,4 @@ $resul1 = mysqli_query($conn,"SELECT *  FROM students");
 
 </body>
 </html>
+
